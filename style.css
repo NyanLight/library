@@ -1,1 +1,42 @@
+* {
+    box-sizing: border-box;
+}
 
+html {
+    font-size: 62.5%;
+}
+
+html, body {
+    min-height: 100svh;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 2fr 6fr 1fr;
+    background-color: rgb(235, 243, 211);
+}
+
+header {
+    text-align: center;
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 3rem;
+    font-weight: 1000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
