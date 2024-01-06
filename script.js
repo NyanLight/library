@@ -1,3 +1,5 @@
+const main = document.querySelector('main');
+
 const fable =  {
     title: "Fable 2",
     hours: 35,
@@ -20,4 +22,22 @@ function Game(title, hours, beat) {
 
 function addGame(game) {
     myGames.push(game);
+};
+
+function createCard() {
+    const card = document.createElement('div');
+    card.classList.add("card");
+    const title = document.createElement('p');
+    card.appendChild(title);
+    const hours = document.createElement('p');
+    card.appendChild(hours);
+    const beat = document.createElement('p');
+    card.appendChild(beat);
+    main.appendChild(card);
 }
+
+function displayLibrary() {
+    for (const game of myGames) {
+        console.log(game);
+    };
+};
