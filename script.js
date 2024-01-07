@@ -24,17 +24,8 @@ function Game(title, hours, beat) {
     }
 };
 
-const fable =  {
-    title: "Fable 2",
-    hours: 35,
-    beat: true,
-};
-
-const fallout = {
-    title: "Fallout: New Vegas",
-    hours: 250,
-    beat: true,
-}
+const fable = new Game("Fable 2", 25, true);
+const fallout = new Game("Fallout: New Vegas", 250, true);
 
 let myGames = [fable, fallout];
 
@@ -45,6 +36,6 @@ function addGame(game) {
 
 function displayLibrary() {
     for (const game of myGames) {
-        console.log(game);
+        game.createCard();
     };
 };
