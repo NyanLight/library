@@ -1,4 +1,4 @@
-const cardSection = document.getElementsByClassName('cardSection');
+const cardSection = document.getElementById('cardSection');
 const dialog = document.querySelector('dialog');
 
 function Game(title, hours, beat) {
@@ -25,10 +25,7 @@ function Game(title, hours, beat) {
     }
 };
 
-const fable = new Game("Fable 2", 25, true);
-const fallout = new Game("Fallout: New Vegas", 250, true);
-
-let myGames = [fable, fallout];
+let myGames = [];
 
 function addGame(game) {
     myGames.push(game);
@@ -36,6 +33,7 @@ function addGame(game) {
 
 
 function displayLibrary() {
+    cardSection.innerHTML = "";
     for (const game of myGames) {
         game.createCard();
     };
@@ -51,5 +49,6 @@ addBtn.addEventListener("click", (e) => {
     const hoursInput = document.getElementById('hoursInput').value;
     const beatChecked = (document.querySelector(`input[name="beat"]:checked`).value === 'true');
     const game = new Game(titleInput, Number(hoursInput), beatChecked);
-    addGame(game); 
+    addGame(game);
+    displayLibrary(); 
 })
