@@ -18,7 +18,7 @@ body {
   background-color: rgb(235, 243, 211);
 }
 
-main {
+.cardSection {
   padding: 1rem 5rem;
   display: grid;
   gap: 1rem;

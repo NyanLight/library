@@ -1,4 +1,4 @@
-const main = document.querySelector('main');
+const cardSection = document.getElementsByClassName('cardSection');
 
 function Game(title, hours, beat) {
     this.title = title;
@@ -20,7 +20,7 @@ function Game(title, hours, beat) {
         } else {
             beatCard.textContent = "Not completed";
         };
-        main.appendChild(card);
+        cardSection.appendChild(card);
     }
 };
 
