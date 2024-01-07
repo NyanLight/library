@@ -1,4 +1,5 @@
 const cardSection = document.getElementsByClassName('cardSection');
+const dialog = document.querySelector('dialog');
 
 function Game(title, hours, beat) {
     this.title = title;
@@ -39,3 +40,16 @@ function displayLibrary() {
         game.createCard();
     };
 };
+
+const dialogBtn = document.getElementById('dialogBtn');
+dialogBtn.addEventListener('click', () => dialog.showModal());
+
+const addBtn = document.getElementById("addBtn");
+addBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const titleInput = document.getElementById('titleInput').value;
+    const hoursInput = document.getElementById('hoursInput').value;
+    const beatChecked = document.querySelector(`input[name="beat"]:checked`).value;
+    const game = new Game(titleInput, Number(hoursInput), Boolean(beatChecked));
+    addGame(game); 
+})

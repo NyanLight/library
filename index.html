@@ -11,8 +11,8 @@
     <header><h1>Your favorite game library</h1></header>
     <main>
       <div class="cardSection"></div>
-      <button>ADD GAME</button>
-      <dialog open>
+      <button id='dialogBtn'>ADD GAME</button>
+      <dialog>
         <form method="dialog">
           <div>
             <label for="titleInput"> 
@@ -29,23 +29,22 @@
           <fieldset>
             <legend>Have you beat the game?</legend>
             <div>
-              <input type="radio" id="Yes" name="beat" value="Yes">
+              <input type="radio" id="Yes" name="beat" value="true">
               <label for="Yes">Yes</label>
             </div>
             <div>
-              <input type="radio" id="Nope" name="beat" value="Nope" checked>
+              <input type="radio" id="Nope" name="beat" value="false" checked>
               <label for="Nope">Nope</label>
             </div>
           </fieldset>
           <button formmethod="dialog">CANCEL</button>
-          <button type="submit" formmethod="dialog">ADD</button>
+          <button type="submit" formmethod="dialog" id="addBtn">ADD</button>
         </form>
       </dialog>
     </main>
     <footer>
       <a href="https://github.com/NyanLight"
-        ><img src="github-mark.svg" alt="githab logo" /> Visit my GitHub</a
-      >
+        ><img src="github-mark.svg" alt="githab logo" /> Visit my GitHub</a>
     </footer>
   </body>
 </html>
