@@ -21,6 +21,10 @@ function Game(title, hours, beat) {
         } else {
             beatCard.textContent = "Not completed";
         };
+        const removeBtn = document.createElement('button')
+        removeBtn.classList.add("removeBtn");
+        removeBtn.textContent = "Delete";
+        card.appendChild(removeBtn);
         cardSection.appendChild(card);
     }
 };
