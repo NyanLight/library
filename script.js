@@ -49,7 +49,7 @@ addBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const titleInput = document.getElementById('titleInput').value;
     const hoursInput = document.getElementById('hoursInput').value;
-    const beatChecked = document.querySelector(`input[name="beat"]:checked`).value;
-    const game = new Game(titleInput, Number(hoursInput), Boolean(beatChecked));
+    const beatChecked = (document.querySelector(`input[name="beat"]:checked`).value === 'true');
+    const game = new Game(titleInput, Number(hoursInput), beatChecked);
     addGame(game); 
 })
