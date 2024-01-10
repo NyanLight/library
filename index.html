@@ -6,34 +6,46 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Raleway:ital,wght@1,200&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header><h1>Your favorite game library</h1></header>
     <main>
       <div class="cardSection" id="cardSection"></div>
-      <button id='dialogBtn'>ADD GAME</button>
+      <button id="dialogBtn">ADD GAME</button>
       <dialog>
         <form method="dialog">
           <div>
-            <label for="titleInput"> 
+            <label for="titleInput">
               Enter the title:
-              <input type="text" id="titleInput">
+              <input type="text" id="titleInput" />
             </label>
           </div>
           <div>
             <label for="hoursInput">
               How many hours did you play?
-              <input type="number" id="hoursInput">
+              <input type="number" id="hoursInput" />
             </label>
           </div>
           <fieldset>
             <legend>Have you beat the game?</legend>
             <div>
-              <input type="radio" id="Yes" name="beat" value="true">
+              <input type="radio" id="Yes" name="beat" value="true" />
               <label for="Yes">Yes</label>
             </div>
             <div>
-              <input type="radio" id="Nope" name="beat" value="false" checked>
+              <input type="radio" id="Nope" name="beat" value="false" checked />
               <label for="Nope">Nope</label>
             </div>
           </fieldset>
@@ -44,7 +56,8 @@
     </main>
     <footer>
       <a href="https://github.com/NyanLight"
-        ><img src="github-mark.svg" alt="githab logo" /> Visit my GitHub</a>
+        ><img src="github-mark.svg" alt="githab logo" /> Visit my GitHub</a
+      >
     </footer>
   </body>
 </html>

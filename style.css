@@ -15,6 +15,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: rgb(235, 243, 211);
 }
 
@@ -23,13 +24,19 @@ body {
   display: grid;
   gap: 1rem;
   grid-auto-flow: row;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 600px));
 }
 header {
   height: 15rem;
   text-align: center;
   font-size: 2rem;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  /* margin: auto; */
 }
 
 footer {
@@ -52,5 +59,34 @@ a {
 .card {
   border: 2px solid black;
   text-align: center;
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  background-color: rgb(44, 243, 177);
 }
  
+button {
+  font-family: 'Inter', sans-serif;
+  padding: 0.3rem;
+}
+
+#dialogBtn {
+  background-color: rgb(131, 247, 95);
+  border: black solid 3px;
+  height: 5rem;
+  width: 12rem;
+  align-self: center;
+}
+
+.removeBtn {
+  background-color: rgb(196, 73, 73);
+}
+
+.statusBtn {
+  background-color: rgb(182, 185, 187);
+}
+
+.removeBtn, .statusBtn {
+  margin: 0 0.5rem;
+}

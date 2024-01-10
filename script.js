@@ -15,7 +15,7 @@ function Game(title, hours, beat) {
     titleCard.textContent = `${this.title}`;
     const hoursCard = document.createElement("p");
     card.appendChild(hoursCard);
-    hoursCard.textContent = `${this.hours}`;
+    hoursCard.textContent = `${this.hours} hours`;
     const beatCard = document.createElement("p");
     card.appendChild(beatCard);
     if (this.beat === true) {
@@ -33,7 +33,7 @@ function Game(title, hours, beat) {
     card.appendChild(removeBtn);
     const statusBtn = document.createElement("button");
     statusBtn.classList.add("statusBtn");
-    statusBtn.textContent = "Change status!";
+    statusBtn.textContent = "Toggle!";
     statusBtn.addEventListener("click", () => {
       this.beat = !this.beat;
       if (this.beat === true) {
