@@ -27,10 +27,22 @@ function Game(title, hours, beat) {
     removeBtn.classList.add("removeBtn");
     removeBtn.textContent = "Delete";
     removeBtn.addEventListener("click", () => {
-      myGames.splice(card.dataset.index, 1,);
+      myGames.splice(card.dataset.index, 1, "");
       card.remove();
     });
     card.appendChild(removeBtn);
+    const statusBtn = document.createElement('button');
+    statusBtn.classList.add('statusBtn');
+    statusBtn.textContent = 'Change status!';
+    statusBtn.addEventListener('click', () => {
+        this.beat = !this.beat;
+        if (this.beat === true) {
+            beatCard.textContent = "Completed";
+          } else {
+            beatCard.textContent = "Not completed";
+          };
+    });
+    card.appendChild(statusBtn)
     cardSection.appendChild(card);
   };
 }
@@ -39,6 +51,7 @@ function addGame(game) {
   myGames.push(game);
   game.createCard();
 }
+
 
 const dialogBtn = document.getElementById("dialogBtn");
 dialogBtn.addEventListener("click", () => dialog.showModal());
