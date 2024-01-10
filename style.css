@@ -15,28 +15,35 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: rgb(235, 243, 211);
 }
+
+
 
 .cardSection {
   padding: 1rem 5rem;
   display: grid;
   gap: 1rem;
   grid-auto-flow: row;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 600px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
 }
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 15rem;
-  text-align: center;
   font-size: 2rem;
   font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: rgb(241, 215, 181);
+  box-shadow: -7px 8px 8px 0px rgba(34, 60, 80, 0.2);;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  /* margin: auto; */
+  align-self: stretch;
+  flex: 1;
 }
 
 footer {
@@ -46,6 +53,9 @@ footer {
   justify-content: center;
   align-items: center;
   justify-self: end;
+  border-top: dashed black 1px;
+  margin-top: 1rem;
+
 }
 
 a {
@@ -63,7 +73,7 @@ a {
   font-size: 1.6rem;
   font-family: 'Raleway', sans-serif;
   color: black;
-  background-color: rgb(44, 243, 177);
+  background-color: rgb(241, 215, 181);
 }
  
 button {
@@ -71,12 +81,18 @@ button {
   padding: 0.3rem;
 }
 
+button:hover {
+  transform: scale(1.1)
+}
+
 #dialogBtn {
-  background-color: rgb(131, 247, 95);
+  background-color: rgb(182, 185, 187);
   border: black solid 3px;
   height: 5rem;
   width: 12rem;
   align-self: center;
+  justify-self: end;
+  margin-top: auto;
 }
 
 .removeBtn {
@@ -89,4 +105,30 @@ button {
 
 .removeBtn, .statusBtn {
   margin: 0 0.5rem;
+}
+
+dialog{
+  font-size: 1.8rem;
+  align-items: center;
+  background-color: rgb(236, 235, 234);
+}
+
+dialog button {
+  width: 10rem;
+  margin: 0.5rem 0;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input {
+  padding: 3px;
+}
+
+form div {
+  margin: 0.5rem 1rem;
 }

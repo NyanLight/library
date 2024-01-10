@@ -1,28 +1,40 @@
 const cardSection = document.getElementById("cardSection");
 const dialog = document.querySelector("dialog");
+const dialogBtn = document.getElementById("dialogBtn");
+const addBtn = document.getElementById("addBtn");
 
 let myGames = [];
+
+function addGame(game) {
+  myGames.push(game);
+  game.createCard();
+}
+
 function Game(title, hours, beat) {
   this.title = title;
   this.hours = hours;
   this.beat = beat;
   this.createCard = function () {
     const card = document.createElement("div");
+    const titleCard = document.createElement("p");
+    const hoursCard = document.createElement("p");
+    const beatCard = document.createElement("p");
+
     card.dataset.index = myGames.indexOf(this);
     card.classList.add("card");
-    const titleCard = document.createElement("p");
     card.appendChild(titleCard);
     titleCard.textContent = `${this.title}`;
-    const hoursCard = document.createElement("p");
+
     card.appendChild(hoursCard);
     hoursCard.textContent = `${this.hours} hours`;
-    const beatCard = document.createElement("p");
+
     card.appendChild(beatCard);
     if (this.beat === true) {
       beatCard.textContent = "Completed";
     } else {
       beatCard.textContent = "Not completed";
     }
+
     const removeBtn = document.createElement("button");
     removeBtn.classList.add("removeBtn");
     removeBtn.textContent = "Delete";
@@ -31,6 +43,7 @@ function Game(title, hours, beat) {
       card.remove();
     });
     card.appendChild(removeBtn);
+    
     const statusBtn = document.createElement("button");
     statusBtn.classList.add("statusBtn");
     statusBtn.textContent = "Toggle!";
@@ -47,15 +60,8 @@ function Game(title, hours, beat) {
   };
 }
 
-function addGame(game) {
-  myGames.push(game);
-  game.createCard();
-}
-
-const dialogBtn = document.getElementById("dialogBtn");
 dialogBtn.addEventListener("click", () => dialog.showModal());
 
-const addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const titleInput = document.getElementById("titleInput").value;
