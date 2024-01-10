@@ -31,18 +31,18 @@ function Game(title, hours, beat) {
       card.remove();
     });
     card.appendChild(removeBtn);
-    const statusBtn = document.createElement('button');
-    statusBtn.classList.add('statusBtn');
-    statusBtn.textContent = 'Change status!';
-    statusBtn.addEventListener('click', () => {
-        this.beat = !this.beat;
-        if (this.beat === true) {
-            beatCard.textContent = "Completed";
-          } else {
-            beatCard.textContent = "Not completed";
-          };
+    const statusBtn = document.createElement("button");
+    statusBtn.classList.add("statusBtn");
+    statusBtn.textContent = "Change status!";
+    statusBtn.addEventListener("click", () => {
+      this.beat = !this.beat;
+      if (this.beat === true) {
+        beatCard.textContent = "Completed";
+      } else {
+        beatCard.textContent = "Not completed";
+      }
     });
-    card.appendChild(statusBtn)
+    card.appendChild(statusBtn);
     cardSection.appendChild(card);
   };
 }
@@ -51,7 +51,6 @@ function addGame(game) {
   myGames.push(game);
   game.createCard();
 }
-
 
 const dialogBtn = document.getElementById("dialogBtn");
 dialogBtn.addEventListener("click", () => dialog.showModal());
