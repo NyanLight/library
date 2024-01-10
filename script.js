@@ -6,10 +6,9 @@ function Game(title, hours, beat) {
   this.title = title;
   this.hours = hours;
   this.beat = beat;
-  this.index = myGames.length;
   this.createCard = function () {
     const card = document.createElement("div");
-    card.setAttribute("data-index", this.index);
+    card.dataset.index = myGames.indexOf(this);
     card.classList.add("card");
     const titleCard = document.createElement("p");
     card.appendChild(titleCard);
@@ -28,8 +27,8 @@ function Game(title, hours, beat) {
     removeBtn.classList.add("removeBtn");
     removeBtn.textContent = "Delete";
     removeBtn.addEventListener("click", () => {
-      myGames.splice(this.index, 1);
-      displayLibrary;
+      myGames.splice(card.dataset.index, 1,);
+      card.remove();
     });
     card.appendChild(removeBtn);
     cardSection.appendChild(card);
@@ -38,14 +37,7 @@ function Game(title, hours, beat) {
 
 function addGame(game) {
   myGames.push(game);
-}
-
-
-function displayLibrary() {
-  cardSection.innerHTML = "";
-  for (const game of myGames) {
-    game.createCard();
-  }
+  game.createCard();
 }
 
 const dialogBtn = document.getElementById("dialogBtn");
@@ -60,5 +52,4 @@ addBtn.addEventListener("click", (e) => {
     document.querySelector(`input[name="beat"]:checked`).value === "true";
   const game = new Game(titleInput, Number(hoursInput), beatChecked);
   addGame(game);
-  displayLibrary();
 });
