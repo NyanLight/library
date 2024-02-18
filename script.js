@@ -10,11 +10,14 @@ function addGame(game) {
   game.createCard();
 }
 
-function Game(title, hours, beat) {
+class Game {
+ constructor(title, hours, beat){
   this.title = title;
   this.hours = hours;
   this.beat = beat;
-  this.createCard = function () {
+ }
+
+  createCard() {
     const card = document.createElement("div");
     const titleCard = document.createElement("p");
     const hoursCard = document.createElement("p");
