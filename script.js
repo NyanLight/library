@@ -2,6 +2,8 @@ const cardSection = document.getElementById("cardSection");
 const dialog = document.querySelector("dialog");
 const dialogBtn = document.getElementById("dialogBtn");
 const addBtn = document.getElementById("addBtn");
+const form = document.getElementById("form");
+const cancelBtn = document.getElementById('cancelBtn');
 
 let myGames = [];
 
@@ -64,8 +66,10 @@ class Game {
 }
 
 dialogBtn.addEventListener("click", () => dialog.showModal());
+cancelBtn.addEventListener('click', () => dialog.close());
 
 addBtn.addEventListener("click", (e) => {
+  if (form.checkValidity()) {
   e.preventDefault();
   const titleInput = document.getElementById("titleInput").value;
   const hoursInput = document.getElementById("hoursInput").value;
@@ -73,4 +77,7 @@ addBtn.addEventListener("click", (e) => {
     document.querySelector(`input[name="beat"]:checked`).value === "true";
   const game = new Game(titleInput, Number(hoursInput), beatChecked);
   addGame(game);
+  } else {
+    return;
+  }
 });

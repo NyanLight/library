@@ -25,23 +25,23 @@
       <div class="cardSection" id="cardSection"></div>
       <button id="dialogBtn">ADD GAME</button>
       <dialog>
-        <form method="dialog">
+        <form method="dialog" id="form">
           <div>
             <label for="titleInput">
               Enter the title:
-              <input type="text" id="titleInput" />
+              <input type="text" id="titleInput" required/>
             </label>
           </div>
           <div>
             <label for="hoursInput">
               Hours spent
-              <input type="number" id="hoursInput" />
+              <input type="number" id="hoursInput" required/>
             </label>
           </div>
           <fieldset>
             <legend>Have you beat the game?</legend>
             <div>
-              <input type="radio" id="Yes" name="beat" value="true" />
+              <input type="radio" id="Yes" name="beat" value="true" required />
               <label for="Yes">Yes</label>
             </div>
             <div>
@@ -50,7 +50,7 @@
             </div>
           </fieldset>
           <div class="buttons">
-            <button formmethod="dialog">CANCEL</button>
+            <button type="button" formmethod="dialog" id="cancelBtn">CANCEL</button>
             <button type="submit" formmethod="dialog" id="addBtn">ADD</button>
           </div>
         </form>
